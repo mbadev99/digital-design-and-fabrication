@@ -6,7 +6,7 @@ First, we prepared the electrical components and selected the appropriate resist
 
 During our first attempt, we faced two main challenges. First, we had forgotten how the positive, negative, and ground rails connect inside the breadboard cells. We initially assumed the right and left power rails were internally connected. Second, the LED did not turn on because we had connected it in reverse, forgetting that the longer pin (anode) must be connected to the positive side. We quickly identified and fixed these problems, and the circuit worked perfectly.
 
-![Breadboard wiring for Task 1.1](P1-Breadboard/media/task1-1-1.jpg)
+![Breadboard wiring for Task 1.1](P1-Breadboard/media/Task1-1-1.jpg)
 
 Next, we measured the voltage across R1 ($V_{1}$) and the LED ($V_{LED}$).
 
@@ -25,7 +25,7 @@ In this task, we added a switch to the base circuit as instructed in the schemat
 
 Despite this, the primary function was intact, and it successfully turned the LED on and off. As requested, we also tested connecting the switch in the opposite direction. As expected, since a standard mechanical switch is not polarized, we observed no difference in its operation.
 
-![Switchable LED Circuit 1.2](P1-Breadboard/media/task1-2-1.jpg)
+![Switchable LED Circuit 1.2](P1-Breadboard/media/Task1-2-1.jpg)
 
 ---
 
@@ -40,7 +40,7 @@ Wiring this circuit was slightly more challenging as we initially got confused a
 
 **Observations:** We observed that rotating the potentiometer changes its resistance, which in turn alters the brightness of the LED. As the resistance of the potentiometer increased, $V_{LED}$ and $V_{2}$ decreased, which restricted the current and caused the LED to dim. A notable characteristic of this relationship is that it is not perfectly linear; once $V_{2}$ drops below the LED's minimum forward voltage threshold, the LED turns off completely (Position C).
 
-![Dimmable LED Circuit 1.3](P1-Breadboard/media/task1-3-1.jpg)
+![Dimmable LED Circuit 1.3](P1-Breadboard/media/Task1-3-1.jpg)
 
 ---
 
@@ -49,7 +49,7 @@ The assembly of this circuit was straightforward, and we successfully built it w
 
 **Observations & Principle of Operation:** In this circuit, the switch controls the Gate-Source voltage ($V_{GS}$) of the transistor. When the switch is closed, a 5V signal from the USB is applied to the Gate. This small control voltage turns the MOSFET "ON", allowing a much larger current to flow from the Drain to the Source ($V_{DS}$), which powers the 12V LED strip. The transistor effectively acts as an electronic bridge, allowing a safe, low-voltage 5V circuit to control a higher-power 12V load while keeping their power domains isolated, sharing only a common ground. Also, we measured the voltage on ($V_{GS}$) which was almost 5.2V and 11.7V on ($V_{DS}$).
 
-![Switchable LED Circuit 2.1](P1-Breadboard/media/task2-1-1.jpg)
+![Switchable LED Circuit 2.1](P1-Breadboard/media/Task2-1-1.jpg)
 
 ---
 
@@ -68,4 +68,4 @@ To investigate further, we recorded the LED strip using our smartphone's slow-mo
 
 | Dimmable LED Strip 2.2 | SWM Wire Connections |
 | :---: | :---: |
-| ![](P1-Breadboard/media/task2-2-1.jpg) | ![](P1-Breadboard/media/task2-2-2.jpg) |
+| ![](P1-Breadboard/media/Task2-2-1.jpg) | ![](P1-Breadboard/media/Task2-2-2.jpg) |
