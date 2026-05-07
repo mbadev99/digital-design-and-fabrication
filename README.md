@@ -68,4 +68,4 @@ To investigate further, we recorded the LED strip using our smartphone's slow-mo
 
 | Dimmable LED Strip 2.2 | SWM Wire Connections |
 | :---: | :---: |
-| !(P1-Breadboard/media/task2-2-1.jpg) | !(P1-Breadboard/media/task2-2-2.jpg) |
+| ![](P1-Breadboard/media/task2-2-1.jpg) | ![](P1-Breadboard/media/task2-2-2.jpg) |
