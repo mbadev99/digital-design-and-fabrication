@@ -274,7 +274,6 @@ Before building the complex system, we decided to break the project into smaller
 To ensure all IRF520 MOSFET modules received signals properly, we initially wired them to the Arduino without connecting the high-current pumps or the valve.Initially, we connected all the ground pins together, but we soon realized this was unnecessary, so we removed the redundant wires. We wrote a simple test script to activate the digital pins one by one and checked the built-in status LEDs on the MOSFET modules. This safely confirmed that our control logic and wiring were correct.During the exercise, we encountered an interesting behavior: the MOSFET continued to function using only the signal and ground connections, even though its VCC pin was not connected to the Arduino's 5V pin.
 
 ![MOSFET LED Test without Load](P3-Sensors-and-Actuators/media/Task3-1.gif)
-*Testing MOSFET signals via built-in LEDs before connecting the motors.*
 
 **2. Pneumatic Integration:**
 Next, we connected the ZR370-02PM air pumps and the FA0520E air valve to the load side of the MOSFETs, powered by the external lab supply. During this phase, we realized that the pumps should be connected to standard digital outputs rather than PWM pins to ensure reliable ON/OFF switching. We tested the inflate pump, deflate pump, and valve using a basic loop sequence, and the pneumatic circuit functioned perfectly.
@@ -305,6 +304,7 @@ void loop() {
   delay(5000);
 }
 ```
+|  Pneumatic Setup | Functionality Of Pneumatic Circuit  |
 |:---:|:---:|
 | ![Pneumatic Setup](P3-Sensors-and-Actuators/media/Task3-2.jpg) | ![](P3-Sensors-and-Actuators/media/Task3-2-2.gif) |
 
@@ -395,5 +395,6 @@ void loop() {
 }
 ```
 
+|  Final Setup With Ultrasonic Sensor | Functionality Of Final Circuit  |
 |:---:|:---:|
 |![Sensor Wiring Setup](P3-Sensors-and-Actuators/media/Task3-3.jpg) | ![](P3-Sensors-and-Actuators/media/Task3-3-2.gif) |
