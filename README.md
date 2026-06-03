@@ -304,10 +304,21 @@ void loop() {
   delay(5000);
 }
 ```
-|  Pneumatic Setup | Functionality Of Pneumatic Circuit  |
-|:---:|:---:|
-| ![Pneumatic Setup](P3-Sensors-and-Actuators/media/Task3-2.jpg) | ![](P3-Sensors-and-Actuators/media/Task3-2-2.gif) |
 
+<table align="center">
+  <tr>
+    <th align="center">Pneumatic Setup</th>
+    <th align="center">Functionality Of Pneumatic Circuit</th>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+      <img src="P3-Sensors-and-Actuators/media/Task3-2.jpg" alt="Sensor Wiring Setup" width="380px">
+    </td>
+    <td align="center" valign="middle">
+      <img src="P3-Sensors-and-Actuators/media/Task3-2-2.gif" alt="Circuit Functionality" width="380px">
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -395,6 +406,17 @@ void loop() {
 }
 ```
 
-|  Final Setup With Ultrasonic Sensor | Functionality Of Final Circuit  |
-|:---:|:---:|
-|![Sensor Wiring Setup](P3-Sensors-and-Actuators/media/Task3-3.jpg) | ![](P3-Sensors-and-Actuators/media/Task3-3-2.gif) |
+<table align="center">
+  <tr>
+    <th align="center">Final Setup With Ultrasonic Sensor</th>
+    <th align="center">Functionality Of Final Circuit</th>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+      <img src="P3-Sensors-and-Actuators/media/Task3-3.jpg" alt="Sensor Wiring Setup" width="380px">
+    </td>
+    <td align="center" valign="middle">
+      <img src="P3-Sensors-and-Actuators/media/Task3-3-2.gif" alt="Circuit Functionality" width="380px">
+    </td>
+  </tr>
+</table>
