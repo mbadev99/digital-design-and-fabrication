@@ -259,3 +259,141 @@ Final alarm clock circuit with time and snooze information shown on the LCD.
 **Alarm clock snooze function:** 
 --
 ![Alarm clock functionality snooze](P2-Arduino-Alarm-Clock/media/Task5-1-4.gif)
+
+---
+
+## Exercise 3: Sensors & Actuators
+
+This exercise focused on building a pneumatic system controlled by an Arduino. The system consists of two air pumps (for inflation and deflation), an air valve, and an inflatable pillow, brought to life through a custom sensor-driven interaction.
+
+### Part A: Testing MOSFETs and Pneumatic Circuit
+
+Before building the complex system, we decided to break the project into smaller, manageable testing phases. 
+
+**1. MOSFET Logic Test:**
+To ensure all IRF520 MOSFET modules received signals properly, we initially wired them to the Arduino without connecting the high-current pumps or the valve.Initially, we connected all the ground pins together, but we soon realized this was unnecessary, so we removed the redundant wires. We wrote a simple test script to activate the digital pins one by one and checked the built-in status LEDs on the MOSFET modules. This safely confirmed that our control logic and wiring were correct.During the exercise, we encountered an interesting behavior: the MOSFET continued to function using only the signal and ground connections, even though its VCC pin was not connected to the Arduino's 5V pin.
+
+![MOSFET LED Test without Load](P3-Sensors-and-Actuators/media/Task3-1.gif)
+*Testing MOSFET signals via built-in LEDs before connecting the motors.*
+
+**2. Pneumatic Integration:**
+Next, we connected the ZR370-02PM air pumps and the FA0520E air valve to the load side of the MOSFETs, powered by the external lab supply. During this phase, we realized that the pumps should be connected to standard digital outputs rather than PWM pins to ensure reliable ON/OFF switching. We tested the inflate pump, deflate pump, and valve using a basic loop sequence, and the pneumatic circuit functioned perfectly.
+
+```cpp
+const int Deflate = 2;
+const int Inflate = 4;
+const int Valve = 8;
+
+void setup() {
+  pinMode(Inflate, OUTPUT);
+  pinMode(Deflate, OUTPUT);
+  pinMode(Valve, OUTPUT);
+}
+
+void loop() {
+  delay(100);
+  digitalWrite(Valve, LOW);
+  digitalWrite(Inflate, HIGH);
+  delay(5000);
+  digitalWrite(Inflate, LOW);
+  delay(1000);
+  digitalWrite(Valve, HIGH);
+  delay(1000);
+  digitalWrite(Deflate, HIGH);
+  delay(4500);
+  digitalWrite(Deflate, LOW);
+  delay(5000);
+}
+```
+|:---:|:---:|
+| ![Pneumatic Setup](P3-Sensors-and-Actuators/media/Task3-2.jpg) | ![](P3-Sensors-and-Actuators/media/Task3-2-2.gif) |
+
+
+---
+
+### Part B: Sensor Integration & Interaction Design
+
+For the interactive part of the system, we wanted an intuitive and simple design first, which we could later expand upon. 
+
+**Interaction Concept:**
+We chose a "touchless inflation" approach using an HC-SR04 Ultrasonic Distance Sensor, paired with a tactile push-button for deflation. 
+*   **Inflate:** Placing a hand close to the sensor (under 10 cm) mimics a magical or hover-based interaction, triggering the inflate pump and switching the valve.
+*   **Deflate:** Pressing a physical button (acting as an analog release valve) triggers the deflate pump.
+
+**Troubleshooting the Ultrasonic Sensor:**
+When we first connected the ultrasonic sensor, the system did not respond to our hand gestures. At first, we assumed we needed to identify the I2C/serial address of the sensor. However, we later realized that this specific sensor operates differently and does not require an address. Then, To debug this, we used the `Serial.print()` function to read the raw `duration` values on the Serial Monitor. The monitor showed invalid values. After double-checking our code and wiring, we swapped the sensor for a new one. The new sensor worked flawlessly, leading us to the conclusion that the first sensor was defective.
+
+---
+
+### Final Implementation & Reflection
+
+Once the hardware issues were resolved, we merged the sensor inputs and actuator outputs into the final code. 
+
+**Final System Code:**
+```cpp
+const int pumpInflatePin = 4;
+const int pumpDeflatePin = 2;
+const int valvePin = 8;
+
+const int trigPin = 12;     
+const int echoPin = 13;     
+const int buttonPin = 7;    
+
+const int triggerDistanceCm = 10; 
+
+void setup() {
+  Serial.begin(9600);
+  
+  pinMode(pumpInflatePin, OUTPUT);
+  pinMode(pumpDeflatePin, OUTPUT);
+  pinMode(valvePin, OUTPUT);
+  
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(buttonPin, INPUT_PULLUP); 
+
+  digitalWrite(pumpInflatePin, LOW);
+  digitalWrite(pumpDeflatePin, LOW);
+  digitalWrite(valvePin, LOW);
+}
+
+void loop() {
+  bool isDeflating = (digitalRead(buttonPin) == LOW);
+  long duration;
+  int distance;
+  
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034 / 2;
+
+  if (isDeflating) {
+    digitalWrite(valvePin, HIGH); 
+    delay(500);
+    digitalWrite(pumpDeflatePin, HIGH); 
+    digitalWrite(pumpInflatePin, LOW);  
+    Serial.println("Button pressed: Deflating...");
+  } 
+  else if (distance > 0 && distance < triggerDistanceCm) {
+    digitalWrite(valvePin, LOW);  
+    digitalWrite(pumpInflatePin, HIGH); 
+    digitalWrite(pumpDeflatePin, LOW);  
+    Serial.print("Hand detected at ");
+    Serial.print(distance);
+    Serial.println(" cm: Inflating...");
+  } 
+  else {
+    digitalWrite(pumpInflatePin, LOW);
+    digitalWrite(pumpDeflatePin, LOW);
+  }
+  
+  delay(1000); 
+}
+```
+
+|:---:|:---:|
+|![Sensor Wiring Setup](P3-Sensors-and-Actuators/media/Task3-3.jpg) | ![](P3-Sensors-and-Actuators/media/Task3-3-2.gif) |
