@@ -420,3 +420,39 @@ void loop() {
     </td>
   </tr>
 </table>
+
+---
+
+## Exercise 4: E-Textiles
+
+The goal of this exercise was to gain experience with functional materials and soft circuits by creating an e-textile patch that can be attached to clothing. 
+
+### 1. Materials and Initial Design
+The first step was selecting the appropriate materials. I tested several pieces of fabric and chose one that was easy to sew through. For the circuit, I evaluated different conductive threads and noticed they had varying levels of electrical resistance; I opted for the thread with the lowest resistance to ensure optimal power delivery. My component list included a sewable 3V coin battery holder, 8 sewable LEDs exceeding the minimum requirement of 5, a sewing needle, and scissors.
+
+I decided to design the patch in the shape of a diamond. I drew the initial design onto the fabric using a pen, carefully cut out the shape, and added some finishing details to the edges.
+
+![Initial Fabric Design](P4-E-Textiles/media/Task4-1.jpg)
+*Figure 1: Cutting and preparing the diamond-shaped fabric base.*
+
+---
+
+### 2. Assembly and Sewing Strategy
+Next, I planned the circuit layout, specifying the exact placement of the battery holder and the LEDs. Since the yarn inherently has high resistance, I had to ensure a parallel circuit design so the resistance would be divided, the voltage would remain constant, and all 8 LEDs would light up properly.
+
+When I began sewing with the conductive thread, I found it extremely challenging to hold the components in place while simultaneously stitching the electrical connections. To solve this, I developed a more efficient method: I first fixed all the components securely to the fabric using regular (non-conductive) thread. Once they were physically stable, I went back and sewed the electrical connections between them using the conductive thread. This approach was much easier and also minimized the waste of conductive materials, which was an important consideration since e-textile materials are difficult to recycle.
+
+---
+
+### 3. Troubleshooting and Finalizing
+After completing the conductive stitching, I tested the circuit. I encountered an unexpected setback: some of the LEDs did not turn on. During troubleshooting, I discovered that pressing down on the non-working LEDs caused them to light up. This indicated that the conductive thread did not have a tight, solid electrical connection with the component pads at certain points. 
+
+![Loose conductive connection on LEDs](P4-E-Textiles/media/Task4-2.jpg)
+
+To resolve this issue, I sewed a few additional, tighter loops around the connection pads of the problematic LEDs. This improved the connectivity and successfully completed the circuit. 
+
+![Troubleshooting the Circuit](P4-E-Textiles/media/Task4-3.jpg)
+
+Finally, I sewed a cover piece over the main base to hide the circuitry and protect the threads, resulting in the completed, functional e-textile patch.
+
+![Final E-Textile Patch](P4-E-Textiles/media/Task4-4.jpg)
