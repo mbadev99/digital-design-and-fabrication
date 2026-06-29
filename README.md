@@ -1,4 +1,20 @@
 # Portfolio: Digital Design & Fabrication
+
+**Course:** Digital Design and Fabrication (inf175)  
+**Institution:** Carl von Ossietzky Universität Oldenburg  
+**Student:** [Your Name/Pseudonym]  
+
+---
+
+## 📑 Table of Contents
+* [Exercise 1: Electrical Circuits](#exercise-1-electrical-circuits)
+* [Exercise 2: Arduino-Based Alarm Clock with Snooze Function](#exercise-2-arduino-based-alarm-clock-with-snooze-function)
+* [Exercise 3: Sensors & Actuators](#exercise-3-sensors--actuators)
+* [Exercise 4: E-Textiles](#exercise-4-e-textiles)
+* [Exercise 6: Laser Cut Business Cards](#exercise-6-laser-cut-business-cards)
+
+---
+
 ## Exercise 1: Electrical Circuits
 
 ### Task 1.1: Simple LED Circuit
@@ -456,3 +472,75 @@ To resolve this issue, I sewed a few additional, tighter loops around the connec
 Finally, I sewed a cover piece over the main base to hide the circuitry and protect the threads, resulting in the completed, functional e-textile patch.
 
 ![Final E-Textile Patch](P4-E-Textiles/media/Task4-4.jpg)
+
+---
+
+## Exercise 6: Laser Cut Business Cards
+
+This exercise aimed to design and fabricate a business card using Inkscape and a laser cutter. During this process, I learned how to prepare vectors for laser cutting, adjust object properties, choose safe materials, and account for material thickness.
+
+![Final Product](P6-Laser-Cut-Business-Card//media/Business-card-front.jpg)
+
+### 1. Design Preparation
+I wanted to design a minimal, elegant business card that instantly communicates my profession as a Backend Developer.The design combines both vector and raster modes and is sized to match standard business card dimensions of approximately 89 x 51 mm. 
+
+The artwork was prepared in Inkscape utilizing the following setup principles:
+* **Raster Engraving:** The text (Name, Title, Contact Info), the horizontal line, the rounded square border, and the QR code were all designated for raster engraving.
+* **Vector Cutting:** The outer boundary of the card and the `</>` code symbol on the right side were designed to be cut completely through the wood. To achieve this, these specific shapes were set as unfilled objects with an outline width of exactly 0.001 mm. I utilized the "Outline Overlay" display mode to verify the cut paths. I also ensured there were proper bridges within the `</>` cut-out so the remaining wood wouldn't be too fragile or prone to breaking.
+* **Geometric Accuracy:** To ensure the laser cutter followed the exact intended dimensions, I enabled the "Geometric bounding box" preference in Inkscape. Following the machine guidelines, I aligned the design to the top-left corner of the page, leaving a precise 1 mm margin from the top and left edges.
+
+<table align="center">
+  <tr>
+    <th align="center">Design Layers</th>
+    <th align="center">Stroke Style</th>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+      <img src="P6-Laser-Cut-Business-Card/media/Layers-Inkscape.png" alt="Layers" width="380px">
+    </td>
+    <td align="center" valign="middle">
+      <img src="P6-Laser-Cut-Business-Card/media/Stroke style-Inkscape.png" alt="Stroke Style" width="380px">
+    </td>
+  </tr>
+</table>
+
+### 2. Exporting and Failed Attempts
+After finishing the design, I exported the file as a PDF. 
+
+**Reflection on Troubleshooting:** During my first export attempt, some elements of my design did not appear in the resulting PDF file. This was a valuable lesson in verifying stroke and fill behaviors during file conversion. After adjusting the object properties and trying again, I successfully generated a perfect PDF where all elements were displayed properly.
+
+![Final Exported PDF](P6-Laser-Cut-Business-Card//media/Exported-PDF.png)
+
+### 3. Setting Up the Machine
+I chose plywood as my base material and used digital calipers to measure its exact thickness, which was 1.42 mm. 
+
+I selected the job type as "Combined" to execute both the engraving and cutting paths. After entering the exact material thickness into the system, I enabled Auto Focus. I carefully dialed in the appropriate Speed, Power, and Frequency settings for both the Raster and Vector panels to achieve dark, legible text and clean cut-throughs without excessive charring.
+
+![Setting Up The Machine](P6-Laser-Cut-Business-Card//media/Machine-settings.jpg)
+![Setting Guid](P6-Laser-Cut-Business-Card//media/Setting-Guid.jpg)
+
+Before firing the laser, I turned on both the fume extractor and the compressor to provide Air Assist. This directs air over the burn point, significantly reducing fire risk and charring. 
+
+I placed the wood sheet in the top-left corner of the vector cutting table. Using the Control Panel's Jog function and the Red Dot Pointer, I accurately set the Home Position (X:0, Y:0) to define exactly where the cut would begin.
+
+![Laser Cut In Action](P6-Laser-Cut-Business-Card//media/Final-process.gif)
+
+### 4. Final Product and Reflection
+The final product is a highly successful execution of the exercise. The card features a distinct, professional aesthetic. The use of a large `</>` cut-out provides a unique, thematic visual element without creating overly fragile strips of wood. 
+
+The raster-engraved QR code is clean and defined, showcasing precise laser focusing. Furthermore, the overall lack of heavy scorching around the vector cuts indicates that the Air Assist and speed/power settings were properly optimized for the 1.42 mm plywood.
+
+<table align="center">
+  <tr>
+    <th align="center">Front</th>
+    <th align="center">Back</th>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+      <img src="P6-Laser-Cut-Business-Card/media/Business-card-front.jpg" alt="Front" width="380px">
+    </td>
+    <td align="center" valign="middle">
+      <img src="P6-Laser-Cut-Business-Card/media/Business-card-back.jpg" alt="Back" width="380px">
+    </td>
+  </tr>
+</table>
