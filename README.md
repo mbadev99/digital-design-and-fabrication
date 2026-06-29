@@ -2,16 +2,17 @@
 
 **Course:** Digital Design and Fabrication (inf175)  
 **Institution:** Carl von Ossietzky Universität Oldenburg  
-**Student:** [Your Name/Pseudonym]  
+**Student:** Mohammad Bazrafkan
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 * [Exercise 1: Electrical Circuits](#exercise-1-electrical-circuits)
 * [Exercise 2: Arduino-Based Alarm Clock with Snooze Function](#exercise-2-arduino-based-alarm-clock-with-snooze-function)
 * [Exercise 3: Sensors & Actuators](#exercise-3-sensors--actuators)
 * [Exercise 4: E-Textiles](#exercise-4-e-textiles)
 * [Exercise 6: Laser Cut Business Cards](#exercise-6-laser-cut-business-cards)
+* [Exercise 7: Introduction to Parametric Feature-Based CAD](#exercise-7-introduction-to-parametric-feature-Based-cad)
 
 ---
 
@@ -544,3 +545,21 @@ The raster-engraved QR code is clean and defined, showcasing precise laser focus
     </td>
   </tr>
 </table>
+
+---
+
+## Exercise 7: Introduction to Parametric Feature-Based CAD
+
+This exercise consisted of a self-study online training module.
+
+### Completed Training Modules
+To complete this assignment, I went through the "Introduction to CAD" learning path and finished the three mandatory courses:
+
+* **Introduction to Parametric Feature-Based CAD**
+* **Introduction to Sketching**
+* **Introduction to Part Studios**
+
+### Proof of Completion
+As required for the portfolio submission, the image below shows my Onshape training dashboard. It confirms that all three assigned courses were successfully completed.
+
+![Onshape Training Dashboard - Completed Courses](P7-DDF-OnShape-Self-Study/media/dashboard-screenshot.png)
