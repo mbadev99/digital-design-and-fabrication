@@ -11,6 +11,7 @@
 * [Exercise 2: Arduino-Based Alarm Clock with Snooze Function](#exercise-2-arduino-based-alarm-clock-with-snooze-function)
 * [Exercise 3: Sensors & Actuators](#exercise-3-sensors--actuators)
 * [Exercise 4: E-Textiles](#exercise-4-e-textiles)
+* [Exercise 5: CNC Milling Project](#exercise-5-cnc-milling-project)
 * [Exercise 6: Laser Cut Business Cards](#exercise-6-laser-cut-business-cards)
 * [Exercise 7: Introduction to Parametric Feature-Based CAD](#exercise-7-introduction-to-parametric-feature-Based-cad)
 
@@ -476,6 +477,47 @@ Finally, I sewed a cover piece over the main base to hide the circuitry and prot
 
 ---
 
+## Exercise 5: CNC Milling Project
+
+### 1. Project Objective
+For this exercise, the goal was to learn the basics of Inkscape by designing a custom wooden tea light candle holder. The workflow involved setting up the page in the Document Properties, drawing a custom vector outline, and accurately positioning a specific circle in the middle for the candle to sit in.
+
+### 2. Design Choice & Setup
+While the manual provided a Christmas tree as an example, I decided to design a classic sports car (a Porsche 911). I started by importing my reference picture onto the Canvas. To make tracing easier and keep the workspace organized, I used the Layers and Objects panel to move the reference image to a locked bottom layer.
+
+![Reference Image](P5-CNC-Milling/media/model.jpg)
+*Figure 1: The Porsche 911 reference image used for tracing.*
+
+### 3. Working in Inkscape
+I began tracing by using the Pencil tool to draw the basic segments around the car's silhouette. To make the lines perfectly match the car's real curves, I switched to the Node tool. By manipulating the anchor points and tweaking the Bézier handles, I was able to get the roofline and wheels looking incredibly smooth and accurate.
+
+Once my main shape was closed and refined, I used the Ellipse/Arc tool to draw the candle hole. Using the Selector tool, I adjusted the exact dimensions in the Tool controls bar to precisely 39.5 mm. Finally, I selected both the car outline and the circle, and used the Align and Distribute panel to lock the circle right in the center of the design.
+
+![Designing in Inkscape](P5-CNC-Milling/media/Design.png)
+*Figure 2: The finalized vector paths in Inkscape, displayed in Outline Overlay mode.*
+
+### 4. The Final Result
+After finishing the sketch, the vector file was imported into the CAM software to generate the toolpaths. The CNC machine first milled the pocket for the tea light and then cut the main profile out of a beautiful block of hardwood. 
+
+As shown in the photos below, the physical model matches my vector design perfectly, and the tea light fits exactly into the machined pocket.
+
+<table align="center">
+  <tr>
+    <th align="center">Front View</th>
+    <th align="center">Angled View</th>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+      <img src="P5-CNC-Milling/media/Final product-1.jpg" alt="Front view of the CNC milled wooden car" width="380px">
+    </td>
+    <td align="center" valign="middle">
+      <img src="P5-CNC-Milling/media/Final product-2.jpg" alt="Angled view" width="380px">
+    </td>
+  </tr>
+</table>
+
+---
+
 ## Exercise 6: Laser Cut Business Cards
 
 This exercise aimed to design and fabricate a business card using Inkscape and a laser cutter. During this process, I learned how to prepare vectors for laser cutting, adjust object properties, choose safe materials, and account for material thickness.
@@ -563,3 +605,5 @@ To complete this assignment, I went through the "Introduction to CAD" learning p
 As required for the portfolio submission, the image below shows my Onshape training dashboard. It confirms that all three assigned courses were successfully completed.
 
 ![Onshape Training Dashboard - Completed Courses](P7-DDF-OnShape-Self-Study/media/dashboard-screenshot.png)
+
+---
